@@ -1,4 +1,5 @@
 let des = document.getElementById('des').getContext('2d')
+let res = document.getElementById('res')
 
 let estrada = new Estrada(20, 345, 40, 10, 'yellow')
 let estrada2 = new Estrada(80, 345, 40, 10, 'yellow')
@@ -63,6 +64,7 @@ function colisao() {
         carroInimigo3.recomeca()
     }
     console.log('Vida ',carro.vida)
+    res.innerHTML = carro.vida
 }
 
 function pontuacao(){
@@ -76,6 +78,7 @@ function pontuacao(){
         carro.pontos += 5
     }
     console.log('pontos: ',carro.pontos)
+    res.innerHTML = carro.pontos
 }
 
 
