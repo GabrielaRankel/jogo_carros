@@ -61,14 +61,21 @@ function colisao() {
     if (carro.colid(carroInimigo3)) {
         carro.vida -= 1
         carroInimigo3.recomeca()
-
-    } else {
-
     }
+    console.log('Vida ',carro.vida)
 }
 
 function pontuacao(){
-
+    if(carro.point(carroInimigo)){
+        carro.pontos += 5        
+    }
+    if(carro.point(carroInimigo2)){
+        carro.pontos += 5
+    }
+    if(carro.point(carroInimigo3)){
+        carro.pontos += 5
+    }
+    console.log('pontos: ',carro.pontos)
 }
 
 

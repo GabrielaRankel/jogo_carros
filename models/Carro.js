@@ -72,6 +72,7 @@ class Obj {
 class Carro extends Obj {
     dir = 0
     vida = 5
+    pontos = 0
     mov_car() {
         this.y += this.dir
 
@@ -84,33 +85,42 @@ class Carro extends Obj {
 
     colid(objeto) {
         if ((this.x < objeto.x + objeto.w) && (this.x + this.w > objeto.x) && (this.y < objeto.y + objeto.h) && (this.y + this.h > objeto.y)) {
+
             return true
         } else {
             return false
         }
     }
+
+    point(objeto){
+    if(objeto <- 100){
+        return true
+    }else{
+        return false
+    }
+    }
 }
 
 class CarroInimigo extends Obj {
     recomeca() {
-        this.x = 1500
-        this.y = Math.floor(Math.random() * (638 - 62)) + 64 // quando o carro sair da tela
+        this.x = 1300
+        this.y = Math.floor((Math.random() * (638 - 62)) + 64) // quando o carro sair da tela
 
     }
 
     mov_car() {
-        this.x -= 10  // velocidade
-        if (this.x < -100) {
-            this.recomeca()
-        }
+        this.x -= 10
+        if(this.x <= - 200){            
+            this.recomeca()  
 
     }
+}
 }
 
 class Estrada extends Obj {
     mov_est() {
-        this.x -= 6
-        if (this.x < -160) {
+        this.x -= 7
+        if (this.x < -60) {
             this.x = 1300
         }
     }
